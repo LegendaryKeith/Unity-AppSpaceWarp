@@ -24,7 +24,6 @@ MonoBehaviour:
   bodyTrackingSupport: 0
   faceTrackingSupport: 0
   eyeTrackingSupport: 0
-  virtualKeyboardSupport: 0
   disableBackups: 1
   enableNSCConfig: 1
   securityXmlPath: 
@@ -33,6 +32,6 @@ MonoBehaviour:
   requiresSystemKeyboard: 0
   experimentalFeaturesEnabled: 0
   insightPassthroughEnabled: 0
-  _insightPassthroughSupport: 0
   systemSplashScreen: {fileID: 0}
-  systemSplashScreenType: 0
+  ovrPluginMd5Win64: cc745177e7550713731157d64af22834
+  ovrPluginMd5Android: 997ec6c34867e09e006518cbedd3a649

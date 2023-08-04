@@ -40,7 +40,7 @@ public class PassthroughStyler : MonoBehaviour
         OVRPassthroughLayer.ColorMapEditorType.ColorAdjustment;
 
     private float _savedBlend = 1;
-    private OVRPassthroughColorLut _passthroughColorLut;
+    //private OVRPassthroughColorLut _passthroughColorLut;
     private IEnumerator _fade;
 
     private void Start()
@@ -55,7 +55,7 @@ public class PassthroughStyler : MonoBehaviour
         _savedColor = new Color(1, 1, 1, 0);
         ShowFullMenu(false);
         _mainCanvas.interactable = false;
-        _passthroughColorLut = new OVRPassthroughColorLut(_colorLutTexture);
+        //_passthroughColorLut = new OVRPassthroughColorLut(_colorLutTexture);
 
         if (!OVRManager.GetPassthroughCapabilities().SupportsColorPassthrough)
         {
@@ -124,7 +124,7 @@ public class PassthroughStyler : MonoBehaviour
     public void OnBlendChange(float newValue)
     {
         _savedBlend = newValue;
-        _passthroughLayer.SetColorLut(_passthroughColorLut, _savedBlend);
+        //_passthroughLayer.SetColorLut(_passthroughColorLut, _savedBlend);
     }
 
     /// <summary>
@@ -153,7 +153,7 @@ public class PassthroughStyler : MonoBehaviour
     {
         if (isOn)
         {
-            SetPassthroughStyle(OVRPassthroughLayer.ColorMapEditorType.ColorLut);
+            //SetPassthroughStyle(OVRPassthroughLayer.ColorMapEditorType.ColorLut);
         }
     }
 
@@ -203,9 +203,9 @@ public class PassthroughStyler : MonoBehaviour
         {
             timer += Time.deltaTime;
             float normTimer = Mathf.Clamp01(timer / duration);
-            if (_currentStyle == OVRPassthroughLayer.ColorMapEditorType.ColorLut)
+          /**  if (_currentStyle == OVRPassthroughLayer.ColorMapEditorType.ColorLut)
             {
-                _passthroughLayer.SetColorLut(_passthroughColorLut,
+               // _passthroughLayer.SetColorLut(_passthroughColorLut,
                     Mathf.Lerp(blend, _savedBlend * styleValueMultiplier, normTimer));
             }
             else
@@ -214,7 +214,7 @@ public class PassthroughStyler : MonoBehaviour
                     Mathf.Lerp(brightness, _savedBrightness * styleValueMultiplier, normTimer),
                     Mathf.Lerp(contrast, _savedContrast * styleValueMultiplier, normTimer),
                     Mathf.Lerp(saturation, _savedSaturation * styleValueMultiplier, normTimer));
-            }
+            }**/
 
             _passthroughLayer.edgeColor = Color.Lerp(edgeCol,
                 new Color(_savedColor.r, _savedColor.g, _savedColor.b, _savedColor.a * styleValueMultiplier),
@@ -263,13 +263,13 @@ public class PassthroughStyler : MonoBehaviour
     private void SetPassthroughStyle(OVRPassthroughLayer.ColorMapEditorType passthroughStyle)
     {
         _currentStyle = passthroughStyle;
-        if (_currentStyle == OVRPassthroughLayer.ColorMapEditorType.ColorLut)
+     /**   if (_currentStyle == OVRPassthroughLayer.ColorMapEditorType.ColorLut)
         {
-            _passthroughLayer.SetColorLut(_passthroughColorLut, _savedBlend);
+            //_passthroughLayer.SetColorLut(_passthroughColorLut, _savedBlend);
         }
         else
         {
             UpdateBrighnessContrastSaturation();
-        }
+        }**/
     }
 }

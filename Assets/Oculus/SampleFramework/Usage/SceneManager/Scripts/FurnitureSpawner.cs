@@ -48,7 +48,7 @@ public class FurnitureSpawner : MonoBehaviour
             dimensions.z = 1;
 
             // Special case 01: Has only top plane
-            if (_classification.Contains(OVRSceneManager.Classification.Table) ||
+            if (_classification.Contains(OVRSceneManager.Classification.Desk) ||
                 _classification.Contains(OVRSceneManager.Classification.Couch))
             {
                 GetVolumeFromTopPlane(
